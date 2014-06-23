@@ -25,7 +25,7 @@ module ProfPic
       email_hash = Digest::MD5.hexdigest(email.strip.downcase)
       query_hash = hash_without_nils({
         s: size,
-        d: (default ? CGI.escape(default) : nil)
+        d: default
       })
       params = {
         scheme: (https ? 'https' : 'http'),
